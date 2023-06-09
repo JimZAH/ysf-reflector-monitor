@@ -32,7 +32,6 @@ impl Ysf {
 }
 
 pub fn run(config: Config) {
-    let mut buf: [u8; 155] = [0; 155];
     let mut call = "YSFP ".to_string();
     call.push_str(&config.callsign);
     let sock = Arc::new(net::UdpSocket::bind(&config.bind).unwrap());
@@ -41,7 +40,6 @@ pub fn run(config: Config) {
         sox.send_to(call.as_bytes(), &config.server).unwrap();
         thread::sleep(time::Duration::from_millis(1000 * 5));
     });
-    sock.recv(&mut buf).unwrap();
 
     let mut buf: [u8; 155] = [0; 155];
     loop {
