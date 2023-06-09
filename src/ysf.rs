@@ -2,7 +2,6 @@ use crate::Config;
 use std::{net, sync::Arc, thread, time};
 const YSF_BUFF: usize = 155;
 
-#[derive(Default)]
 pub struct Ysf {
     pub route: String,
     pub callsign: String,
