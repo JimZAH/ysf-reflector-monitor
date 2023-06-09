@@ -1,6 +1,5 @@
-use std::{env::args,process};
+use std::{env::args, process};
 use ysfs::ysf;
-
 
 fn main() {
     let args: Vec<String> = args().collect();
@@ -16,5 +15,4 @@ fn main() {
     };
 
     ysf::run(config);
-
 }
